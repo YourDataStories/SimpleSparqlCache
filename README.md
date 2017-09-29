@@ -1,10 +1,10 @@
 # SPARQL endpoint simple cache 
 This sets a simple cache for a SPARQL endpoint.
 
-Caching SPARQL request can greatly improve the respons of the SPARQL endpoint. 
-[Virtuoso](https://www.mail-archive.com/virtuoso-users@lists.sourceforge.net/msg07242.html) is for instance applying only caching internal structures used in the calculation of the respons. It does not implement a query cache. 
+Caching SPARQL request can greatly improve the response of the SPARQL endpoint. 
+[Virtuoso](https://www.mail-archive.com/virtuoso-users@lists.sourceforge.net/msg07242.html) is for instance only caching internal structures used in the calculation of the response. It does not implement a query cache. 
 
-However, SPARQL endpoint caching comes with a challenge. Since SPARQL queries can create a GET HTTP request larger than accepted by most (proxy) services, many of the applications use POST to get around the limitation even if the data is readonly and fully cacheable. Therefore standard url proxy caching is not effective. This proxy cache is a special instance suited for READONLY sparql endpoints.
+However, SPARQL endpoint caching comes with a challenge. Since SPARQL queries can create a GET HTTP request larger than what is accepted by most (proxy) services, many of the applications use POST to get around the limitation even if the data is readonly and fully cacheable. Therefore standard url proxy caching is not effective. This proxy cache is a special instance suited for READONLY sparql endpoints.
 
 It is build upon Nginx because Apache 2.4 does not allow to specify caching POST http requests.
 
